@@ -1,3 +1,4 @@
+import CrudTableRow from "../molecules/CrudTableRow";
 
 
 const CrudTable = ({ data, deleteData, setDataToEdit }) => {
