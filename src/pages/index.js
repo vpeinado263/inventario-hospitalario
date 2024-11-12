@@ -1,4 +1,5 @@
-import CrudApp from "@/components/CrudApp";
+
+import CrudApp from "@/components/templates/CrudApp";
 import Head from "next/head";
 
 export default function Home() {
