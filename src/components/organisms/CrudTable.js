@@ -14,29 +14,26 @@ const CrudTable = ({ data, deleteData, setDataToEdit }) => {
                     <th>Acciones</th>
                 </tr>
             </thead>
+
             <tbody>
               {
                   data.length === 0 && (
                     <tr>
-                      <td colSpan={3}>Información no disponibles</td>
+                      <td colSpan={3}>Información no Disponibles</td>
                     </tr>
                   )
               }
                {
                  data.length !== 0 && (
                   data.map(insumo => 
-                  <CrudTableRow
-                  key={insumo.id} 
-                  insumo={insumo} 
-                  deleteData={deleteData} 
-                  setDataToEdit={setDataToEdit}
-                  />
+                  <CrudTableRow key={insumo.id} insumo={insumo} deleteData={deleteData} setDataToEdit={setDataToEdit}/>
                 ))}
             </tbody>
+
         </table>
     </div>
   )
 
-}
+};
 
 export default CrudTable;
