@@ -1,15 +1,15 @@
-import CrudTableRow from "./CrudTableRow";
 
 
-const CrudTable = ({data, deleteData, setDataToEdit}) => {
+const CrudTable = ({ data, deleteData, setDataToEdit }) => {
+
   return (
     <div>
-        <h3>Tabla de Datos</h3>
+        <h3>Insumos para Reponer</h3>
         <table>
             <thead>
                 <tr>
                     <th>Nombre</th>
-                    <th>Constelacion</th>
+                    <th>cantidad</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
@@ -17,7 +17,7 @@ const CrudTable = ({data, deleteData, setDataToEdit}) => {
               {
                   data.length === 0 && (
                     <tr>
-                      <td colSpan={3}>Datos no disponibles</td>
+                      <td colSpan={3}>Información no disponibles</td>
                     </tr>
                   )
               }
@@ -35,6 +35,7 @@ const CrudTable = ({data, deleteData, setDataToEdit}) => {
         </table>
     </div>
   )
+
 }
 
 export default CrudTable;
