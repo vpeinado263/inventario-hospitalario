@@ -1,0 +1,29 @@
+{
+  "insumos": [
+    {
+      "id": 1,
+      "name": "Insumo 1",
+      "constellation": "Constelación 1"
+    },
+    {
+      "id": 2,
+      "name": "Insumo 2",
+      "constellation": "Constelación 2"
+    },
+    {
+      "id": 1731433373075,
+      "name": "por",
+      "constellation": "qefqefq"
+    },
+    {
+      "id": 1731433425268,
+      "name": "por",
+      "constellation": "wadawd"
+    },
+    {
+      "id": 1731433450772,
+      "name": "la concha",
+      "constellation": "de la lora"
+    }
+  ]
+}
