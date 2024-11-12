@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 const initialForm = {
   name: "",
-  constellation: "",
+  quantity: "",
   id: null
 };
 
@@ -27,7 +27,7 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!form.name || !form.constellation) {
+    if (!form.name || !form.quantity) {
       alert("Por favor, completa el formulario correctamente.");
       return;
     }
@@ -48,7 +48,7 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
 
   return (
     <div>
-      <h3>Agregar</h3>
+      <h3>Agregar Insumo Faltante</h3>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -58,11 +58,11 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
           value={form.name}
         />
         <input
-          type="text"
-          name="constellation"
-          placeholder="Constelación"
+          type="number"
+          name="cantidad"
+          placeholder="cantidad"
           onChange={handleChange}
-          value={form.constellation}
+          value={form.quantity}
         />
         <input type="submit" value="Enviar" />
         <input type="reset" value="Limpiar" onClick={handleReset} />
