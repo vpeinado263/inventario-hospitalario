@@ -3,12 +3,12 @@
     {
       "id": 1,
       "name": "jerigas",
-      "cuantity": 1
+      "quantity": 1
     },
     {
       "id": 2,
-      "name": "solucion fisiológica",
-      "cuantity": 1
+      "name": "solución fisiológica",
+      "quantity": 1
     }
   ]
 }
