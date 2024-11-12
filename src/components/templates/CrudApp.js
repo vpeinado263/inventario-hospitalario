@@ -7,7 +7,7 @@ import CrudTable from "./CrudTable";
 const initialDb = [];
 
 const CrudApp = () => {
-
+  
   const [db, setDb] = useState(initialDb)
   const [dataToEdit, setDataToEdit] = useState(null);
 
@@ -94,7 +94,7 @@ const CrudApp = () => {
 
   return (
     <div>
-    <h2>CRUD APP</h2>
+    <h1>Reposicion de Insumos</h1>
     <CrudForm  
     createData ={ createData}  
     updateData={updateData} 
