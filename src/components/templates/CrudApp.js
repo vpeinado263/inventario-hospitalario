@@ -1,13 +1,10 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
-import CrudForm from "./CrudForm";
-import CrudTable from "./CrudTable";
+import CrudForm from "../organisms/CrudForm";
 
 
-const initialDb = [];
+const initialDb = []; 
 
 const CrudApp = () => {
-  
+
   const [db, setDb] = useState(initialDb)
   const [dataToEdit, setDataToEdit] = useState(null);
 
@@ -22,8 +19,6 @@ const CrudApp = () => {
       console.error("Error reading data:", error);
     }
   };
-  
-  
   
   const createData = async (data) => {
     data.id = Date.now();
@@ -47,8 +42,6 @@ const CrudApp = () => {
     }
   };
   
-  
-
   const updateData = async (data) => {
     const OPTIONS = {
       method: "PUT",
@@ -89,12 +82,10 @@ const CrudApp = () => {
       }
     }
   };
-  
-
 
   return (
-    <div>
-    <h1>Reposicion de Insumos</h1>
+  <div>
+    <h1>Reposición de Insumos</h1>
     <CrudForm  
     createData ={ createData}  
     updateData={updateData} 
@@ -104,8 +95,10 @@ const CrudApp = () => {
     <CrudTable data={db}
      deleteData={deleteData} 
      setDataToEdit={setDataToEdit}/>
-</div>
-  )
-}
+  </div>
+
+  );
+
+};  
 
 export default CrudApp;
