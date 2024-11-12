@@ -6,7 +6,8 @@ const initialForm = {
   id: null
 };
 
-const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
+const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit}) => {
+
   const [form, setForm] = useState(initialForm);
 
   useEffect(() => {
@@ -69,6 +70,7 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
       </form>
     </div>
   );
+ 
 };
 
 export default CrudForm;
