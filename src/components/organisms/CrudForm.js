@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const initialForm = {
   name: "",
@@ -8,6 +8,7 @@ const initialForm = {
 
 const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit}) => {
 
+  
   const [form, setForm] = useState(initialForm);
 
   useEffect(() => {
@@ -18,12 +19,16 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit}) => {
     }
   }, [dataToEdit]);
 
+
+
   const handleChange = (e) => {
     setForm((form) => ({
       ...form,
       [e.target.name]: e.target.value
     }));
   };
+
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -42,32 +47,31 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit}) => {
     handleReset();
   };
 
+
+
   const handleReset = () => {
     setForm(initialForm);
     setDataToEdit(null);
   };
 
+
   return (
     <div>
+
       <h3>Agregar Insumo Faltante</h3>
+
       <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="name"
-          placeholder="Nombre"
-          onChange={handleChange}
-          value={form.name}
-        />
-        <input
-          type="number"
-          name="cantidad"
-          placeholder="cantidad"
-          onChange={handleChange}
-          value={form.quantity}
-        />
+
+        <input type="text" name="name" placeholder="Nombre" onChange={handleChange} value={form.name}/>
+
+        <input type="number" name="quantity" placeholder="Cantidad" onChange={handleChange} value={form.quantity}/>
+
         <input type="submit" value="Enviar" />
+
         <input type="reset" value="Limpiar" onClick={handleReset} />
+
       </form>
+
     </div>
   );
  
