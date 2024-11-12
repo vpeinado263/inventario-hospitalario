@@ -23,10 +23,10 @@ const CrudTable = ({ data, deleteData, setDataToEdit }) => {
               }
                {
                  data.length !== 0 && (
-                  data.map(caballero => 
+                  data.map(insumo => 
                   <CrudTableRow
-                  key={caballero.id} 
-                  caballero={caballero} 
+                  key={insumo.id} 
+                  insumo={insumo} 
                   deleteData={deleteData} 
                   setDataToEdit={setDataToEdit}
                   />
