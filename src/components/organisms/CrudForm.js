@@ -31,7 +31,13 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit}) => {
   }
 
   const handleSubmit = (e) => {
+
     e.preventDefault();
+
+    if (!Number.isInteger(Number(form.quantity)) || form.quantity <= 0) {
+      alert("Por favor, ingresa una cantidad válida.");
+      return;
+    } 
 
     if (!form.name || !form.quantity) {
       alert("Por favor, completa el formulario correctamente.");
@@ -54,7 +60,7 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit}) => {
 
 
   return (
-    <div>
+    <section>
 
       <h3>{dataToEdit ? "Editar Insumo" : "Agregar insumo Faltante"}</h3>
 
@@ -71,13 +77,16 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit}) => {
         min="1"
         required/>
 
-        <input type="submit" value="Enviar" />
+        <input 
+        type="submit" 
+        value="Enviar" 
+        disabled={!form.name || !form.quantity}/>
 
         <input type="reset" value="Limpiar" onClick={handleReset} />
 
       </form>
 
-    </div>
+    </section>
   );
  
 };
