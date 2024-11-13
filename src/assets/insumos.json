@@ -1,14 +1,9 @@
 {
   "insumos": [
     {
-      "id": 1,
-      "name": "jerigas",
-      "quantity": 1
-    },
-    {
-      "id": 2,
-      "name": "solución fisiológica",
-      "quantity": 1
+      "id": 1731521998435,
+      "name": "agujas",
+      "quantity": "10"
     }
   ]
 }
