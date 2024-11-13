@@ -1,14 +1,3 @@
 {
-  "insumos": [
-    {
-      "id": 1,
-      "name": "Guantes",
-      "quantity": 100
-    },
-    {
-      "id": 2,
-      "name": "Mascarillas",
-      "quantity": 50
-    }
-  ]
+  "insumos": []
 }
