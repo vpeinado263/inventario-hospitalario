@@ -1,9 +1,4 @@
 
- 
-   
- 
-
-
  const CrudTableRow = ({ insumo, deleteData, setDataToEdit}) => {
 
   const { name, quantity} = insumo;
