@@ -3,7 +3,8 @@ import CrudForm from "../organisms/CrudForm";
 import CrudTable from "../organisms/CrudTable";
 
 
-const initialDb = [];
+const initialDb = [
+];
 
 const CrudApp = () => {
 

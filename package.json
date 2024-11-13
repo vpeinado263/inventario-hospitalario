@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "apinsumos": "json-server --port 5000 --watch src/assets/insumos.json"
+    "insumos": "json-server --port 5000 --watch src/assets/insumos.json"
   },
   "dependencies": {
     "axios": "^1.7.7",
