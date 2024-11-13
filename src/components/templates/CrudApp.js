@@ -71,7 +71,7 @@ const CrudApp = () => {
 //visualizamos las props a pasar
   return (
     <div> 
-      <h1>Reposición de Insumos</h1>
+      <h1>Sistema de Gestión de Inventario Hospitalario</h1>
      
       <CrudForm 
       createData={createData} 
