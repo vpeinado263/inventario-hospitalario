@@ -1,5 +1,5 @@
+import { useState, useEffect } from 'react';
 import styles from '../styles/Home.module.css';
-import CrudApp from "@/components/templates/CrudApp";
 import Head from "next/head";
 
 export default function Home() {
@@ -17,7 +17,7 @@ export default function Home() {
         <h2 className={styles.description}>Inventario Hospitalario</h2>
       </div>
       
-      <CrudApp/>
+    
     </>
   );
 }
