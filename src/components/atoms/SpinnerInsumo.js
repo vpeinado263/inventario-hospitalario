@@ -1,11 +1,9 @@
-import React from 'react'
+import styles from "./spinner.module.css";
 
 const SpinnerInsumo = () => {
   return (
-    <div>
-      
-    </div>
+    <div className={styles.spinner}></div>
   )
 }
 
-export default SpinnerInsumo
+export default SpinnerInsumo;
