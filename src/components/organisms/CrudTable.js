@@ -19,7 +19,7 @@ const CrudTable = ({ data, deleteData, setDataToEdit }) => {
               {
                   data.length === 0 && (
                     <tr>
-                      <td colSpan={3}>Información no Disponibles</td>
+                      <td colSpan={3}>Sin Insumos</td>
                     </tr>
                   )
               }
