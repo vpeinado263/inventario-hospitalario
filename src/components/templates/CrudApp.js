@@ -22,7 +22,7 @@ const CrudApp = () => {
   }, [])
 
   const createData = async (data) => {
-    data.id = Date.now();
+    data.id = String(Date.now());
 
     const OPTIONS = {
       method : "POST",
