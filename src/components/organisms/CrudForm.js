@@ -68,23 +68,24 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit}) => {
 
       <form onSubmit={handleSubmit}>
 
-        <input type="text" name="name" placeholder="Nombre" onChange={handleChange} value={form.name}/>
+        <input type="text" name="name" placeholder="Nombre de insumo" onChange={handleChange} value={form.name}/>
 
         <input 
         type="number" 
         name="quantity" 
-        placeholder="Cantidad" 
+        placeholder="Cantidad requerida" 
         onChange={handleChange} 
         value={form.quantity}
         min="1"
         required/>
-        
+
         <input
         type="text"
         name="comments"
         placeholder="Detalles"
         onChange={handleChange}
-        value={form.comments}/>
+        value={form.comments}
+        required/>
 
         <input 
         type="submit" 
