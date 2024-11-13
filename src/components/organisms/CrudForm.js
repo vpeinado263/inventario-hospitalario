@@ -56,7 +56,7 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit}) => {
   return (
     <div>
 
-      <h3>Agregar Insumo Faltante</h3>
+      <h3>{dataToEdit ? "Editar Insumo" : "Agregar insumo Faltante"}</h3>
 
       <form onSubmit={handleSubmit}>
 
