@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 const initialForm = {
   name: "",
   quantity: "",
-  patient:"",
   comments: "",
   id: null
 };
