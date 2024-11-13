@@ -1,0 +1,37 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+/*Paleta de colores*/
+  :root {
+    --color-primary:rgb(2, 129, 161);
+    --color-secondary:rgb(54, 167, 183);
+    --color-tertiary: rgb(229, 111, 23);
+    --color-background: rgb(255, 255, 255);
+    --color-text: #333333;
+  }
+/*Tpografía*/
+  :root {
+    --font-primary: 'Arial';
+    --font-size-base: 16px;
+    --line-height: 1.6;
+  }
+/*Estilos Generales*/
+  body {
+    font-family: var(--font-primary);
+    background-color: var(--color-background);
+    color: var(--color-text);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height);
+  }
+/*Estilos para encabezados y párrafos*/
+h1, h2, h3, h4, h5, h6 {
+    color: var(--color-primary);
+  }
+  
+  p {
+    margin-bottom: 1rem;
+  }
+  
