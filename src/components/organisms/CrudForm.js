@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 const initialForm = {
   name: "",
   quantity: "",
+  patient:"",
+  comments: "",
   id: null
 };
 
@@ -76,6 +78,13 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit}) => {
         value={form.quantity}
         min="1"
         required/>
+        
+        <input
+        type="text"
+        name="comments"
+        placeholder="Detalles"
+        onChange={handleChange}
+        value={form.comments}/>
 
         <input 
         type="submit" 
