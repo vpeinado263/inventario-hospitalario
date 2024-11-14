@@ -6,7 +6,6 @@ const CrudTable = ({ data, deleteData, setDataToEdit }) => {
 
   return (
     <div  className={styles['table-container']}>
-        <h3 className={styles.title}>Insumos para Reponer</h3>
         <table className={styles.table}>
             <thead>
                 <tr className={styles.tr}>
