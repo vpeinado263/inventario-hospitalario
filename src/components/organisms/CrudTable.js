@@ -1,4 +1,5 @@
 import CrudTableRow from "../molecules/CrudTableRow";
+import styles from "@/styles/CrudTable.module.css";
 
 
 const CrudTable = ({ data, deleteData, setDataToEdit }) => {
@@ -6,13 +7,13 @@ const CrudTable = ({ data, deleteData, setDataToEdit }) => {
   return (
     <div  className={styles['table-container']}>
         <h3 className={styles.title}>Insumos para Reponer</h3>
-        <table>
+        <table className={styles.table}>
             <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Cantidad</th>
-                    <th>Comentarios</th>
-                    <th>Acciones</th>
+                <tr className={styles.tr}>
+                    <th className={styles.th}>Nombre</th>
+                    <th className={styles.th}>Cantidad</th>
+                    <th className={styles.th}>Comentarios</th>
+                    <th className={styles.th}>Acciones</th>
                 </tr>
             </thead>
 
@@ -20,7 +21,7 @@ const CrudTable = ({ data, deleteData, setDataToEdit }) => {
               {
                   data.length === 0 && (
                     <tr className={styles['empty-row']}>
-                      <td colSpan={4}>Sin Insumos</td>
+                      <td className={styles.td} colSpan={4}>Sin Insumos</td>
                     </tr>
                   )
               }
