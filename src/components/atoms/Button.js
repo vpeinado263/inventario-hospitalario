@@ -1,11 +1,11 @@
-import React from 'react'
+import styles from "@/styles/Button.module.css";
 
-const Button = () => {
+const Button = ({ label, onClick, type}) => {
   return (
-    <div>
-      
-    </div>
-  )
+    <button className={`${styles.button} ${styles[type]}`} onClick={onClick}>
+      {label}
+    </button>
+  );
 }
 
 export default Button;
