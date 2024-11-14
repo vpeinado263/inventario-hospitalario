@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import styles from "@/Home.module.css";
 import Head from "next/head";
 import SpinnerInsumo from '@/components/atoms/SpinnerInsumo';
 import CrudApp from '@/components/templates/CrudApp';
@@ -26,7 +27,9 @@ export default function Home() {
         <SpinnerInsumo/> 
       ) : (
         <>
+        <div className={styles.fade}>
         <CrudApp/>
+        </div>
         </>
       )}
       </>
