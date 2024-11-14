@@ -30,6 +30,6 @@
   .empty-row {
     text-align: center;
     font-style: italic;
-    color: var(--color-button-submit);
+    color: var(--color-button-delete);
   }
   
