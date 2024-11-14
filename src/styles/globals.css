@@ -12,6 +12,10 @@
     --color-background: rgb(255, 255, 255);
     --color-text-home: rgba(223, 10, 10);
     --color-text-dark: rgb(69, 61, 61);
+    --color-button-edit: rgb(73, 186, 72);
+    --color-button-delete: rgb(235, 0, 0);
+    --color-button-reset: rgb(0, 159, 255);
+    --color-button-submit: rgb(143, 22, 255);
   }
 /*Tpografía*/
   :root {
