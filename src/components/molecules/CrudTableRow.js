@@ -1,3 +1,5 @@
+import DeleteButton from "../atoms/DeleteButton";
+import EditButton from "../atoms/EditButton";
 
  const CrudTableRow = ({ insumo, deleteData, setDataToEdit}) => {
 
@@ -9,8 +11,8 @@
       <td>{quantity}</td>
       <td>{comments}</td>
       <td>
-          <button onClick={() => setDataToEdit(insumo)}>Editar</button>
-          <button onClick={() => deleteData(insumo)}>Eliminar</button>
+          <EditButton onClick={() => setDataToEdit(insumo)}/>
+          <DeleteButton onClick={() => deleteData(insumo)}/>
       </td>
     </tr>
     );
