@@ -10,7 +10,7 @@
   /* Botón Editar */
   .edit {
     background-color: var(--color-button-edit);
-    color: white;
+    color: var(--color-text-dark);
   }
   
   .edit:hover {
@@ -20,17 +20,17 @@
   /* Botón Eliminar */
   .delete {
     background-color: var(--color-button-delete);
-    color: var(--color-tertiary);
+    color: var(--color-text-dark);
   }
   
   .delete:hover {
-    background-color: #da190b;
+    background-color: var(--color-tertiary);
   }
   
   /* Botón Limpiar */
   .reset {
     background-color: var(--color-button-reset);
-    color: white;
+    color: var(--color-text-dark);
   }
   
   .reset:hover {
@@ -39,8 +39,8 @@
   
   /* Botón Enviar */
   .submit {
-    background-color: #008CBA;
-    color: white;
+    background-color: var(--color-button-submit);
+    color: var(--color-text-dark);
   }
   
   .submit:hover {
