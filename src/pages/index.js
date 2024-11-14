@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Head from "next/head";
 import SpinnerInsumo from '@/components/atoms/SpinnerInsumo';
+import CrudApp from '@/components/templates/CrudApp';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -14,8 +15,6 @@ export default function Home() {
   }, [])
 
   return (
-    <>
-    <div>
       <>
       <Head>
         <title>Inventario de Turno</title>
@@ -23,11 +22,13 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/react.png" />
       </Head>
-
-      <SpinnerInsumo/>
-    
+      {isLoading ? (
+        <SpinnerInsumo/> 
+      ) : (
+        <>
+        <CrudApp/>
+        </>
+      )}
       </>
-    </div>
-    </>
   );
 }
