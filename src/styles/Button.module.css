@@ -1,49 +1,30 @@
 .button {
     padding: 10px 15px;
     border: none;
-    border-radius: 5px;
+    border-radius: 0.3rem;
     cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
+    font-size: 1em;
+    transition: background-color 0.1s ease;
+    padding: 0.4rem;
   }
   
   /* Botón Editar */
   .edit {
-    background-color: var(--color-button-edit);
-    color: var(--color-text-dark);
+    background-color: var(--color-text-dark);
+    color: var(--color-background);
   }
   
   .edit:hover {
-    background-color: var(--color-tertiary);
+    background-color: var(--color-button-edit);
   }
   
   /* Botón Eliminar */
   .delete {
-    background-color: var(--color-button-delete);
-    color: var(--color-text-dark);
+    background-color: var(--color-text-dark);
+    color: var(--color-background);
   }
   
   .delete:hover {
-    background-color: var(--color-tertiary);
-  }
-  
-  /* Botón Limpiar */
-  .reset {
-    background-color: var(--color-button-reset);
-    color: var(--color-text-dark);
-  }
-  
-  .reset:hover {
-    background-color: var(--color-tertiary);
-  }
-  
-  /* Botón Enviar */
-  .submit {
-    background-color: var(--color-button-submit);
-    color: var(--color-text-dark);
-  }
-  
-  .submit:hover {
-    background-color: var(--color-tertiary);
+    background-color: var(--color-button-delete);
   }
   
