@@ -1,22 +1,3 @@
 {
-  "insumos": [
-    {
-      "id": "1731554415436",
-      "name": "Mascara de oxigeno",
-      "quantity": "2",
-      "comments": "para el paciente de la habitación 5"
-    },
-    {
-      "id": "1731554444763",
-      "name": "Guantes",
-      "quantity": "1",
-      "comments": "wefwefwe"
-    },
-    {
-      "id": "1731554454964",
-      "name": "por",
-      "quantity": "1",
-      "comments": "wefwefwe"
-    }
-  ]
+  "insumos": []
 }
