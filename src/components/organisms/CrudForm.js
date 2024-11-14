@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import styles from "@/styles/CrudForm.module.css";
 
 const initialForm = {
   name: "",
