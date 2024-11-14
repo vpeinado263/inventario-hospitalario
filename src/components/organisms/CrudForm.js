@@ -68,7 +68,13 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit}) => {
 
       <form onSubmit={handleSubmit} className={styles.form}>
 
-        <input type="text" name="name" placeholder="Nombre de insumo" onChange={handleChange} value={form.name}/>
+        <input 
+        type="text" 
+        name="name" 
+        placeholder="Nombre de insumo" 
+        onChange={handleChange} 
+        value={form.name}
+        className={styles.input}/>
 
         <input 
         type="number" 
@@ -91,7 +97,7 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit}) => {
 
         <input 
         type="submit" 
-        value="Enviar" 
+        value="Insertar" 
         disabled={!form.name || !form.quantity}
         className={`${styles.button} ${styles.submit}`}/>
 
