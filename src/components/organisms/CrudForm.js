@@ -64,7 +64,7 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit}) => {
   return (
     <section className={styles.section}>
 
-      <h3>{dataToEdit ? "Editar Insumo" : "Agregar insumo Faltante"}</h3>
+      <h3 className={styles.title}>{dataToEdit ? "Editar Insumo" : "Agregar insumo Faltante"}</h3>
 
       <form onSubmit={handleSubmit} className={styles.form}>
 
