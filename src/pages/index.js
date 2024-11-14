@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import styles from "@/Home.module.css";
+import styles from "@/styles/Home.module.css";
 import Head from "next/head";
 import SpinnerInsumo from '@/components/atoms/SpinnerInsumo';
 import CrudApp from '@/components/templates/CrudApp';
