@@ -61,11 +61,11 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit}) => {
 
 
   return (
-    <section>
+    <section className={styles.section}>
 
       <h3>{dataToEdit ? "Editar Insumo" : "Agregar insumo Faltante"}</h3>
 
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className={styles.form}>
 
         <input type="text" name="name" placeholder="Nombre de insumo" onChange={handleChange} value={form.name}/>
 
@@ -76,7 +76,8 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit}) => {
         onChange={handleChange} 
         value={form.quantity}
         min="1"
-        required/>
+        required
+        className={styles.input}/>
 
         <input
         type="text"
@@ -84,14 +85,20 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit}) => {
         placeholder="Detalles"
         onChange={handleChange}
         value={form.comments}
-        required/>
+        required
+        className={styles.input}/>
 
         <input 
         type="submit" 
         value="Enviar" 
-        disabled={!form.name || !form.quantity}/>
+        disabled={!form.name || !form.quantity}
+        className={`${styles.button} ${styles.submit}`}/>
 
-        <input type="reset" value="Limpiar" onClick={handleReset} />
+        <input 
+        type="reset" 
+        value="Limpiar" 
+        onClick={handleReset} 
+        className={`${styles.button} ${styles.reset}`}/>
 
       </form>
 
