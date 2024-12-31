@@ -35,25 +35,21 @@
   color: var(--color-background);
 }
 
-@media (min-width: 481px) and (max-width: 1024px) {
-    
+@media (min-width: 481px) and (max-width: 1024px) {   
 .section {
   background-color: var(--color-primary);
   padding: 0.5rem;
 }
-
 .title {
   color: var(--color-text-dark);
   font-size: 2.5em;
   text-align: center;
 }
-
 .form {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
-
 .input {
   padding: 1rem;
   border-radius: 1rem;
@@ -64,42 +60,37 @@
   border-radius: 2rem;
   font-size: 1em;
 }
-
 .submit {
   background-color: var(--color-button-submit);
   color: var(--color-background);
 }
-
 .submit:disabled {
   background-color: var(--color-primary);
   color: var(--color-text-dark);
 }
-
 .reset {
   background-color: var(--color-button-reset);
   color: var(--color-background);
 }
 }
-  
-  @media (min-width: 1025px) {
-    .section {
-      background-color: var(--color-primary);
-      padding: 2rem;
-    }
+
+@media (min-width: 1025px) {
+.section {
+  background-color: var(--color-primary);
+  padding: 2rem;
+}
+.title {
+  font-size: 2em;
+  color: var(--color-text-dark);
+}
+.form {
+  display: flex;
+  flex-direction: row;
+  gap: 5rem;
+}
     
-    .title {
-      font-size: 2em;
-      color: var(--color-text-dark);
-    }
-    
-    .form {
-      display: flex;
-      flex-direction: row;
-      gap: 5rem;
-    }
-    
-    .input {
-      padding: 0.5rem;
+.input {
+  padding: 0.5rem;
       font-size: 1em;
       border-radius: 5px;
       border: 2px solid var(--color-tertiary);

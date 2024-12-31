@@ -1,64 +1,16 @@
 {
   "insumos": [
     {
-      "id": "1735656938160",
+      "id": "1735677153928",
       "name": "jeringas descartables",
       "quantity": "3",
       "comments": "paciente de la 12 24 56"
     },
     {
-      "id": "1735661962732",
-      "name": "apositos",
-      "quantity": "20",
-      "comments": "Blanca"
-    },
-    {
-      "id": "1735662193133",
-      "name": "dipirona",
-      "quantity": "5",
-      "comments": "paciente de la 12 24 56"
-    },
-    {
-      "id": "1735663076428",
-      "name": "afaf",
-      "quantity": "4",
-      "comments": "Blanca"
-    },
-    {
-      "id": "1735663083797",
-      "name": "awdfwqf",
-      "quantity": "4142",
-      "comments": "dhdhdt"
-    },
-    {
-      "id": "1735665737011",
-      "name": "jeringas descartables",
-      "quantity": "5",
-      "comments": "paciente de la 12 24 56"
-    },
-    {
-      "id": "1735666432238",
-      "name": "Casa",
-      "quantity": "52",
-      "comments": "paciente de la 12 24 56"
-    },
-    {
-      "id": "1735667839316",
+      "id": "1735677176768",
       "name": "Solución Fisiológica",
-      "quantity": "29",
+      "quantity": "2",
       "comments": "Todos los servicios"
-    },
-    {
-      "id": "1735667849764",
-      "name": "Solución Fisiológica",
-      "quantity": "9",
-      "comments": "paciente de la 12 24 56"
-    },
-    {
-      "id": "1735667856068",
-      "name": "Casa",
-      "quantity": "3",
-      "comments": "paciente de la 12 24 56"
     }
   ]
 }

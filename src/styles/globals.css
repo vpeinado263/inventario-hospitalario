@@ -8,13 +8,13 @@
   :root {
     --color-primary:rgb(2, 129, 161);
     --color-secondary:rgb(54, 167, 183);
-
+    --color-tertiary:rgb(170, 15, 15);
+    --color-text-dark: rgb(19, 30, 54);
 
     --color-background: rgb(234, 242, 221);
-
     --color-foreground: rgb(58, 55, 55);
 
-    --color-text-dark: rgb(19, 30, 54);
+ 
 
     --color-button-edit: rgb(73, 186, 72);
     --color-button-delete: rgb(235, 0, 0);
