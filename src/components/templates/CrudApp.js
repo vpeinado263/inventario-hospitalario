@@ -12,7 +12,7 @@ const CrudApp = () => {
   const [dataToEdit, setDataToEdit] = useState(null);
 
   const readData = async () => {
-      const ENDPOINT = "http://localhost:5000/insumos"
+      const ENDPOINT = "http://localhost:5001/insumos"
       const response = await axios.get(ENDPOINT);
       const data = await response.data;
       setDb(data);
@@ -30,7 +30,7 @@ const CrudApp = () => {
       data: JSON.stringify(data)
     }
     
-    const ENDPOINT = "http://localhost:5000/insumos"
+    const ENDPOINT = "http://localhost:5001/insumos"
     await axios(ENDPOINT, OPTIONS)
 
     readData()
@@ -43,7 +43,7 @@ const CrudApp = () => {
       data: JSON.stringify(data)
     }
 
-    const ENDPOINT = `http://localhost:5000/insumos/${data.id}`
+    const ENDPOINT = `http://localhost:5001/insumos/${data.id}`
     await axios(ENDPOINT, OPTIONS)
     
     readData()
@@ -59,7 +59,7 @@ const CrudApp = () => {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
       } 
-      const ENDPOINT = `http://localhost:5000/insumos/${id}`
+      const ENDPOINT = `http://localhost:5001/insumos/${id}`
       await axios(ENDPOINT, OPTIONS) 
       readData();
     } else {
