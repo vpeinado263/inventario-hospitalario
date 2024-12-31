@@ -1,5 +1,5 @@
 const express = require('express');
-const favicon = requier('serve-favicon');
+const favicon = require('serve-favicon');
 const path = require('path');
 const session = require('express-session');
 const errorHandler = require('./middleware/errorHandler');
@@ -26,7 +26,7 @@ app.use('/', (req, res) => {
 });
 
 app.use((req, res, next) => {
-    res.status(400).send('404 - Pàgina no encontrada');
+    res.status(404).send('404 - Pàgina no encontrada');
 });
 
 module.exports = app;
