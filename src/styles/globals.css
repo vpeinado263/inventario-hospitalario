@@ -8,35 +8,39 @@
   :root {
     --color-primary:rgb(2, 129, 161);
     --color-secondary:rgb(54, 167, 183);
-    --color-tertiary: rgb(229, 111, 23);
+
+
     --color-background: rgb(234, 242, 221);
-    --color-text-home: rgba(223, 10, 10);
-    --color-text-dark: rgb(69, 61, 61);
+
+    --color-foreground: rgb(58, 55, 55);
+
+    --color-text-dark: rgb(19, 30, 54);
+
     --color-button-edit: rgb(73, 186, 72);
     --color-button-delete: rgb(235, 0, 0);
-    --color-button-reset: rgb(0, 159, 255);
+    --color-button-reset:  rgb(229, 111, 23);
     --color-button-submit: rgb(143, 22, 255);
   }
-/*Tpografía*/
+
   :root {
     --font-primary: 'Arial';
     --font-size-base: 16px;
     --line-height: 1.6;
   }
-/*Estilos Generales*/
+
   body {
     font-family: var(--font-primary);
     background-color: var(--color-background);
     color: var(--color-text);
     font-size: var(--font-size-base);
     line-height: var(--line-height);
+    padding: 0.5rem;
   }
-/*Estilos para encabezados y párrafos*/
+
 h1, h2, h3, h4, h5, h6 {
     color: var(--color-primary);
   }
-  
-  p {
-    margin-bottom: 1rem;
-  }
+  @media (min-width: 481px) and (max-width: 1024px) {}
+
+  @media (min-width: 1025px) {}
   

@@ -1,30 +1,56 @@
 .button {
-    padding: 10px 15px;
-    border: none;
+    border: 2px solid black;
     border-radius: 0.3rem;
-    cursor: pointer;
-    font-size: 1em;
-    transition: background-color 0.1s ease;
-    padding: 0.4rem;
   }
-  
-  /* Botón Editar */
   .edit {
-    background-color: var(--color-text-dark);
-    color: var(--color-background);
-  }
-  
-  .edit:hover {
     background-color: var(--color-button-edit);
-  }
-  
-  /* Botón Eliminar */
-  .delete {
-    background-color: var(--color-text-dark);
     color: var(--color-background);
   }
-  
-  .delete:hover {
+  .delete {
     background-color: var(--color-button-delete);
+    color: var(--color-background);
   }
+
+@media (min-width: 481px) and (max-width: 1024px) {
+  .button {
+    border-radius: 0.3rem;
+  }
+  .edit {
+    background-color: var(--color-button-edit);
+    color: var(--color-background);
+  }
+  .delete {
+    background-color: var(--color-button-delete);
+    color: var(--color-background);
+  }
+}
+
   
+@media (min-width: 1025px) {
+      .button {
+        border-radius: 0.3rem;
+        cursor: pointer;
+        transition: background-color 0.1s ease;
+        padding: 0.4rem;
+      }
+      
+      /* Botón Editar */
+      .edit {
+        background-color: var(--color-text-dark);
+        color: var(--color-background);
+      }
+      
+      .edit:hover {
+        background-color: var(--color-button-edit);
+      }
+      
+      /* Botón Eliminar */
+      .delete {
+        background-color: var(--color-text-dark);
+        color: var(--color-background);
+      }
+      
+      .delete:hover {
+        background-color: var(--color-button-delete);
+      }
+    }
