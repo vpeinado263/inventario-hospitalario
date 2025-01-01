@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const insumosController = require('../controller/insumosController');
+const insumosController = require('../controllers/insumosController');
 
 router.get('/', insumosController.getInsumos);
 
