@@ -11,7 +11,7 @@ const CrudApp = () => {
 
   const readData = async () => {
     try {
-      const ENDPOINT = "https://inventario-hospitalario.onrender.com/api/insumos";
+      const ENDPOINT = "https://inventario-hospitalario.onrender.com/insumos";
       const response = await axios.get(ENDPOINT);
       setDb(response.data);
     } catch (error) {
@@ -21,7 +21,7 @@ const CrudApp = () => {
 
   const createData = async (data) => {
     try {
-      const ENDPOINT = "https://inventario-hospitalario.onrender.com/api/insumos";
+      const ENDPOINT = "https://inventario-hospitalario.onrender.com/insumos";
       await axios.post(ENDPOINT, data);
       readData();
     } catch (error) {
@@ -31,7 +31,7 @@ const CrudApp = () => {
 
   const updateData = async (data) => {
     try {
-      const ENDPOINT = `https://inventario-hospitalario.onrender.com/api/insumos/${data._id}`;
+      const ENDPOINT = `https://inventario-hospitalario.onrender.com/insumos/${data._id}`;
       await axios.put(ENDPOINT, data);
       readData();
     } catch (error) {
@@ -43,7 +43,7 @@ const CrudApp = () => {
     const confirmar = confirm(`¿Estás seguro de que quieres eliminar este insumo?`);
     if (confirmar) {
       try {
-        const ENDPOINT = `https://inventario-hospitalario.onrender.com/api/insumos/${id}`;
+        const ENDPOINT = `https://inventario-hospitalario.onrender.com/insumos/${id}`;
         await axios.delete(ENDPOINT);
         readData();
       } catch (error) {
