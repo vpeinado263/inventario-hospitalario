@@ -1,18 +1,20 @@
 const mongoose = require('mongoose');
 
-const insumoSchema = new mongoose.insumoSchema({
-    name: {
-        type: string,
-        required: true,
-    },
-    quantity: {
-        type: String,
-        required: true,
-    },
-    comments: {
-        type: String,
-        required: true,
-    },
+const insumoSchema = new mongoose.Schema({
+  name: {
+    type: String, 
+    required: true,
+  },
+  quantity: {
+    type: Number,
+    required: true,
+  },
+  comments: {
+    type: String,
+    required: false,
+  },
 });
 
-module.exports = mongoose.model('Insumo', insumoSchema);
+const Insumo = mongoose.model('Insumo', insumoSchema);
+
+module.exports = Insumo;

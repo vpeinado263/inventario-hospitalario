@@ -8,6 +8,6 @@ router.post('/', insumosController.createInsumo);
 
 router.put('/:id', insumosController.updateInsumo);
 
-router.delete('/:id', insumosController.DeleteInsumo);
+router.delete('/:id', insumosController.deleteInsumo);
 
 module.exports = router;
