@@ -1,4 +1,4 @@
-const mongoose = requiere('mongoose');
+const mongoose = require('mongoose');
 
 const insumoSchema = new mongoose.insumoSchema({
     name: {
