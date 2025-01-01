@@ -1,6 +1,6 @@
 const app = require('./app');
 const connectDB = require('./database/dbConnection');
-const insumosRoutes = require('./');
+const insumosRoutes = require('./routes/insumosRoutes');
 
 const startServer = async () => {
     try {
