@@ -12,7 +12,7 @@ const CrudApp = () => {
   const [dataToEdit, setDataToEdit] = useState(null);
 
   const readData = async () => {
-      const ENDPOINT = "https://inventario-hospitalario.onrender.com/insumos"
+      const ENDPOINT = "hhttps://inventario-hospitalario.onrender.com/api/insumos"
       const response = await axios.get(ENDPOINT);
       const data = await response.data;
       setDb(data);
@@ -30,7 +30,7 @@ const CrudApp = () => {
       data: JSON.stringify(data)
     }
     
-    const ENDPOINT = "https://inventario-hospitalario.onrender.com/insumos";
+    const ENDPOINT = "https://inventario-hospitalario.onrender.com/api/insumos";
     await axios(ENDPOINT, OPTIONS)
 
     readData()
