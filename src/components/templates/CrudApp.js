@@ -12,7 +12,7 @@ const CrudApp = () => {
   const [dataToEdit, setDataToEdit] = useState(null);
 
   const readData = async () => {
-      const ENDPOINT = "hhttps://inventario-hospitalario.onrender.com/api/insumos"
+      const ENDPOINT = "https://inventario-hospitalario.onrender.com/"
       const response = await axios.get(ENDPOINT);
       const data = await response.data;
       setDb(data);
@@ -30,7 +30,7 @@ const CrudApp = () => {
       data: JSON.stringify(data)
     }
     
-    const ENDPOINT = "https://inventario-hospitalario.onrender.com/api/insumos";
+    const ENDPOINT = "https://inventario-hospitalario.onrender.com/";
     await axios(ENDPOINT, OPTIONS)
 
     readData()
@@ -43,7 +43,7 @@ const CrudApp = () => {
       data: JSON.stringify(data)
     }
 
-    const ENDPOINT = `https://inventario-hospitalario.onrender.com/insumos/${data.id}`;
+    const ENDPOINT = `https://inventario-hospitalario.onrender.com/${data.id}`;
     await axios(ENDPOINT, OPTIONS)
     
     readData()
@@ -59,7 +59,7 @@ const CrudApp = () => {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
       } 
-      const ENDPOINT = `https://inventario-hospitalario.onrender.com/insumos/${id}`;
+      const ENDPOINT = `https://inventario-hospitalario.onrender.com/${id}`;
       await axios(ENDPOINT, OPTIONS) 
       readData();
     } else {
