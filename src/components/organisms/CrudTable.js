@@ -29,7 +29,7 @@ const CrudTable = ({ data, deleteData, setDataToEdit }) => {
                   data.map(insumo => 
 
                   <CrudTableRow 
-                  key={insumo.id} 
+                  key={insumo._id} 
                   insumo={insumo} 
                   deleteData={deleteData} 
                   setDataToEdit={setDataToEdit}/>
