@@ -6,86 +6,72 @@ import CrudTable from "../organisms/CrudTable";
 const initialDb = [];
 
 const CrudApp = () => {
-
-  //Los useState creados
-  const [db, setDb] = useState(initialDb)
+  const [db, setDb] = useState(initialDb);
   const [dataToEdit, setDataToEdit] = useState(null);
 
   const readData = async () => {
-      const ENDPOINT = "https://inventario-hospitalario.onrender.com/"
+    try {
+      const ENDPOINT = "https://inventario-hospitalario.onrender.com/api/insumos";
       const response = await axios.get(ENDPOINT);
-      const data = await response.data;
-      setDb(data);
-  }
-  useEffect(() => {
-    readData()
-  }, [])
+      setDb(response.data);
+    } catch (error) {
+      console.error("Error al leer los datos:", error);
+    }
+  };
 
   const createData = async (data) => {
-    data.id = String(Date.now());
-
-    const OPTIONS = {
-      method : "POST",
-      headers: { "Content-Type": "application/json"},
-      data: JSON.stringify(data)
+    try {
+      const ENDPOINT = "https://inventario-hospitalario.onrender.com/api/insumos";
+      await axios.post(ENDPOINT, data);
+      readData();
+    } catch (error) {
+      console.error("Error al crear insumo:", error);
     }
-    
-    const ENDPOINT = "https://inventario-hospitalario.onrender.com/";
-    await axios(ENDPOINT, OPTIONS)
-
-    readData()
-  }
+  };
 
   const updateData = async (data) => {
-    const OPTIONS = {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      data: JSON.stringify(data)
-    }
-
-    const ENDPOINT = `https://inventario-hospitalario.onrender.com/${data.id}`;
-    await axios(ENDPOINT, OPTIONS)
-    
-    readData()
-
-  };
-
-  const deleteData = async (data) => {
-    const { name, quantity, id } = data;
-    const confirmar = confirm(`¿Estás seguro de que quieres eliminar ${quantity} unidades de ${name}?`);
-
-    if (confirmar) {
-      const OPTIONS = {
-        method: "DELETE",
-        headers: { "Content-Type": "application/json" },
-      } 
-      const ENDPOINT = `https://inventario-hospitalario.onrender.com/${id}`;
-      await axios(ENDPOINT, OPTIONS) 
+    try {
+      const ENDPOINT = `https://inventario-hospitalario.onrender.com/api/insumos/${data._id}`;
+      await axios.put(ENDPOINT, data);
       readData();
-    } else {
-      return
+    } catch (error) {
+      console.error("Error al actualizar insumo:", error);
     }
   };
 
+  const deleteData = async (id) => {
+    const confirmar = confirm(`¿Estás seguro de que quieres eliminar este insumo?`);
+    if (confirmar) {
+      try {
+        const ENDPOINT = `https://inventario-hospitalario.onrender.com/api/insumos/${id}`;
+        await axios.delete(ENDPOINT);
+        readData();
+      } catch (error) {
+        console.error("Error al eliminar insumo:", error);
+      }
+    }
+  };
 
-//visualizamos las props a pasar
+  useEffect(() => {
+    readData();
+  }, []);
+
   return (
-    <div> 
+    <div>
       <CrudForm 
-      createData={createData} 
-      updateData={updateData} 
-      dataToEdit={dataToEdit} 
-      setDataToEdit={setDataToEdit} />
+        createData={createData} 
+        updateData={updateData} 
+        dataToEdit={dataToEdit} 
+        setDataToEdit={setDataToEdit} 
+      />
 
       <CrudTable 
-      data={db} 
-      deleteData={deleteData} 
-      setDataToEdit={setDataToEdit} />
-
+        data={db} 
+        deleteData={deleteData} 
+        setDataToEdit={setDataToEdit} 
+      />
     </div>
-
   );
-
 };
 
 export default CrudApp;
