@@ -1,6 +1,6 @@
-const express = requiere('express');
+const express = require('express');
 const router = express.Router();
-const insumosController = requiere('../controller/insumosController');
+const insumosController = require('../controller/insumosController');
 
 router.get('/', insumosController.getInsumos);
 
