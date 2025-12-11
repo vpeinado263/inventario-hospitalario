@@ -3,54 +3,47 @@ import axios from "axios";
 import CrudForm from "../organisms/CrudForm";
 import CrudTable from "../organisms/CrudTable";
 
-const initialDb = [];
+const API_URL = "https://inventario-hospitalario.onrender.com/insumos";
 
 const CrudApp = () => {
-  const [db, setDb] = useState(initialDb);
+  const [db, setDb] = useState([]);
   const [dataToEdit, setDataToEdit] = useState(null);
 
   const readData = async () => {
     try {
-      const ENDPOINT = "https://inventario-hospitalario.onrender.com/insumos";
-      const response = await axios.get(ENDPOINT);
-      setDb(response.data);
+      const { data } = await axios.get(API_URL);
+      setDb(data);
     } catch (error) {
-      console.error("Error al leer los datos:", error);
+      console.error("Error al leer los datos:", error?.response?.data || error);
     }
   };
 
   const createData = async (data) => {
     try {
-      const ENDPOINT = "https://inventario-hospitalario.onrender.com/insumos";
-      await axios.post(ENDPOINT, data);
+      await axios.post(API_URL, data);
       readData();
     } catch (error) {
-      console.error("Error al crear insumo:", error);
+      console.error("Error al crear insumo:", error?.response?.data || error);
     }
   };
 
   const updateData = async (data) => {
     try {
-      const ENDPOINT = `https://inventario-hospitalario.onrender.com/insumos/${data._id}`;
-      await axios.put(ENDPOINT, data);
+      await axios.put(`${API_URL}/${data._id}`, data);
       readData();
     } catch (error) {
-      console.error("Error al actualizar insumo:", error);
+      console.error("Error al actualizar insumo:", error?.response?.data || error);
     }
   };
 
   const deleteData = async (id) => {
-    const confirmar = confirm(
-      `¿Estás seguro de que quieres eliminar este insumo?`,
-    );
-    if (confirmar) {
-      try {
-        const ENDPOINT = `https://inventario-hospitalario.onrender.com/insumos/${id}`;
-        await axios.delete(ENDPOINT);
-        readData();
-      } catch (error) {
-        console.error("Error al eliminar insumo:", error);
-      }
+    if (!confirm("¿Estás seguro de eliminar este insumo?")) return;
+
+    try {
+      await axios.delete(`${API_URL}/${id}`);
+      readData();
+    } catch (error) {
+      console.error("Error al eliminar insumo:", error?.response?.data || error);
     }
   };
 
@@ -77,3 +70,4 @@ const CrudApp = () => {
 };
 
 export default CrudApp;
+

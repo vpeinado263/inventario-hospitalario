@@ -1,7 +1,7 @@
 import CrudTableRow from "../molecules/CrudTableRow";
 import styles from "@/styles/CrudTable.module.css";
 
-const CrudTable = ({ data, deleteData, setDataToEdit }) => {
+const CrudTable = ({ data = [], deleteData, setDataToEdit }) => {
   return (
     <div className={styles["table-container"]}>
       <table className={styles.table}>
@@ -15,14 +15,13 @@ const CrudTable = ({ data, deleteData, setDataToEdit }) => {
         </thead>
 
         <tbody>
-          {data.length === 0 && (
+          {data.length === 0 ? (
             <tr className={styles["empty-row"]}>
               <td className={styles.td} colSpan={4}>
                 Sin Insumos
               </td>
             </tr>
-          )}
-          {data.length !== 0 &&
+          ) : (
             data.map((insumo) => (
               <CrudTableRow
                 key={insumo._id}
@@ -30,7 +29,8 @@ const CrudTable = ({ data, deleteData, setDataToEdit }) => {
                 deleteData={deleteData}
                 setDataToEdit={setDataToEdit}
               />
-            ))}
+            ))
+          )}
         </tbody>
       </table>
     </div>

@@ -5,7 +5,7 @@ const initialForm = {
   name: "",
   quantity: "",
   comments: "",
-  id: null,
+  _id: null, // <-- ajustado para que coincida con MongoDB
 };
 
 const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
@@ -20,28 +20,29 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
   }, [dataToEdit]);
 
   const handleChange = (e) => {
-    setForm((form) => {
-      return {
-        ...form,
-        [e.target.name]: e.target.value,
-      };
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value,
     });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!Number.isInteger(Number(form.quantity)) || form.quantity <= 0) {
-      alert("Por favor, ingresa una cantidad válida.");
+    // Validaciones
+    if (!form.name.trim()) {
+      alert("El nombre del insumo es obligatorio.");
       return;
     }
 
-    if (!form.name || !form.quantity) {
-      alert("Por favor, completa el formulario correctamente.");
+    const qty = Number(form.quantity);
+    if (!qty || qty <= 0) {
+      alert("Por favor, ingresa una cantidad válida mayor a 0.");
       return;
     }
 
-    if (form.id === null) {
+    // SI NO TIENE _id → es un registro nuevo
+    if (!form._id) {
       createData(form);
     } else {
       updateData(form);
@@ -58,7 +59,7 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
   return (
     <section className={styles.section}>
       <h3 className={styles.title}>
-        {dataToEdit ? "Editar Insumo" : "Agregar insumo Faltante"}
+        {form._id ? "Editar Insumo" : "Agregar Insumo Faltante"}
       </h3>
 
       <form onSubmit={handleSubmit} className={styles.form}>
@@ -78,7 +79,6 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
           onChange={handleChange}
           value={form.quantity}
           min="1"
-          required
           className={styles.input}
         />
 
@@ -88,13 +88,12 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
           placeholder="Detalles"
           onChange={handleChange}
           value={form.comments}
-          required
           className={styles.input}
         />
 
         <input
           type="submit"
-          value="Insertar"
+          value={form._id ? "Actualizar" : "Insertar"}
           disabled={!form.name || !form.quantity}
           className={`${styles.button} ${styles.submit}`}
         />
