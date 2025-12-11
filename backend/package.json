@@ -10,7 +10,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
+  "description": "Backend API para gestión de inventario hospitalario con Express, MongoDB y Mongoose.",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
