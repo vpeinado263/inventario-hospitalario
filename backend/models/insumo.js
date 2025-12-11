@@ -1,8 +1,8 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const insumoSchema = new mongoose.Schema({
   name: {
-    type: String, 
+    type: String,
     required: true,
   },
   quantity: {
@@ -15,6 +15,6 @@ const insumoSchema = new mongoose.Schema({
   },
 });
 
-const Insumo = mongoose.model('Insumo', insumoSchema);
+const Insumo = mongoose.model("Insumo", insumoSchema);
 
 module.exports = Insumo;

@@ -1,46 +1,50 @@
 /* Reset básico */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 /*Paleta de colores*/
-  :root {
-    --color-primary:rgb(2, 129, 161);
-    --color-secondary:rgb(54, 167, 183);
-    --color-tertiary:rgb(170, 15, 15);
-    --color-text-dark: rgb(19, 30, 54);
+:root {
+  --color-primary: rgb(2, 129, 161);
+  --color-secondary: rgb(54, 167, 183);
+  --color-tertiary: rgb(170, 15, 15);
+  --color-text-dark: rgb(19, 30, 54);
 
-    --color-background: rgb(234, 242, 221);
-    --color-foreground: rgb(58, 55, 55);
+  --color-background: rgb(234, 242, 221);
+  --color-foreground: rgb(58, 55, 55);
 
- 
+  --color-button-edit: rgb(73, 186, 72);
+  --color-button-delete: rgb(235, 0, 0);
+  --color-button-reset: rgb(229, 111, 23);
+  --color-button-submit: rgb(143, 22, 255);
+}
 
-    --color-button-edit: rgb(73, 186, 72);
-    --color-button-delete: rgb(235, 0, 0);
-    --color-button-reset:  rgb(229, 111, 23);
-    --color-button-submit: rgb(143, 22, 255);
-  }
+:root {
+  --font-primary: "Arial";
+  --font-size-base: 16px;
+  --line-height: 1.6;
+}
 
-  :root {
-    --font-primary: 'Arial';
-    --font-size-base: 16px;
-    --line-height: 1.6;
-  }
+body {
+  font-family: var(--font-primary);
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height);
+  padding: 0.5rem;
+}
 
-  body {
-    font-family: var(--font-primary);
-    background-color: var(--color-background);
-    color: var(--color-text);
-    font-size: var(--font-size-base);
-    line-height: var(--line-height);
-    padding: 0.5rem;
-  }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-primary);
+}
+@media (min-width: 481px) and (max-width: 1024px) {
+}
 
-h1, h2, h3, h4, h5, h6 {
-    color: var(--color-primary);
-  }
-  @media (min-width: 481px) and (max-width: 1024px) {}
-
-  @media (min-width: 1025px) {}
-  
+@media (min-width: 1025px) {
+}

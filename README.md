@@ -5,12 +5,14 @@ Este proyecto es una aplicación CRUD creada con **React** y **Next.js** que per
 ## Descripción
 
 Esta aplicación es un ejercicio práctico de implementación de operaciones CRUD en una aplicación web. CRUD es un acrónimo que representa las cuatro operaciones principales que permite realizar el protocolo HTTP:
+
 - **C**reate (crear)
 - **R**ead (leer)
 - **U**pdate (actualizar)
 - **D**elete (eliminar)
 
 En esta app, cada una de estas operaciones se asocia con un verbo HTTP diferente:
+
 - **Read** se representa mediante el verbo `GET`.
 - **Create** se representa mediante el verbo `POST`.
 - **Update** se representa mediante el verbo `PUT`.

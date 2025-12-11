@@ -1,7 +1,11 @@
 .fade {
-    animation: fadeIn 0.5s ease-in;
+  animation: fadeIn 0.5s ease-in;
 }
 @keyframes fade {
-    from { opacity: 0;}
-    to { opacity: 1;}
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

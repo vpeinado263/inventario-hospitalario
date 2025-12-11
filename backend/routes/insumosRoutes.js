@@ -1,13 +1,13 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const insumosController = require('../controllers/insumosController');
+const insumosController = require("../controllers/insumosController");
 
-router.get('/', insumosController.getInsumos);
+router.get("/", insumosController.getInsumos);
 
-router.post('/', insumosController.createInsumo);
+router.post("/", insumosController.createInsumo);
 
-router.put('/:id', insumosController.updateInsumo);
+router.put("/:id", insumosController.updateInsumo);
 
-router.delete('/:id', insumosController.deleteInsumo);
+router.delete("/:id", insumosController.deleteInsumo);
 
 module.exports = router;

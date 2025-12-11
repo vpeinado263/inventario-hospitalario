@@ -40,7 +40,9 @@ const CrudApp = () => {
   };
 
   const deleteData = async (id) => {
-    const confirmar = confirm(`¿Estás seguro de que quieres eliminar este insumo?`);
+    const confirmar = confirm(
+      `¿Estás seguro de que quieres eliminar este insumo?`,
+    );
     if (confirmar) {
       try {
         const ENDPOINT = `https://inventario-hospitalario.onrender.com/insumos/${id}`;
@@ -58,17 +60,17 @@ const CrudApp = () => {
 
   return (
     <div>
-      <CrudForm 
-        createData={createData} 
-        updateData={updateData} 
-        dataToEdit={dataToEdit} 
-        setDataToEdit={setDataToEdit} 
+      <CrudForm
+        createData={createData}
+        updateData={updateData}
+        dataToEdit={dataToEdit}
+        setDataToEdit={setDataToEdit}
       />
 
-      <CrudTable 
-        data={db} 
-        deleteData={deleteData} 
-        setDataToEdit={setDataToEdit} 
+      <CrudTable
+        data={db}
+        deleteData={deleteData}
+        setDataToEdit={setDataToEdit}
       />
     </div>
   );
