@@ -18,20 +18,20 @@ exports.createInsumo = async (req, res, next) => {
 
     if (!name || !quantity) {
       return res.status(400).json({
-        message: "El nombre y la cantidad son requeridos."
+        message: "El nombre y la cantidad son requeridos.",
       });
     }
 
     if (typeof quantity !== "number" || quantity < 0) {
-      return res.status(400).json({ 
-        message: "La cantidad debe ser un número válido." 
+      return res.status(400).json({
+        message: "La cantidad debe ser un número válido.",
       });
     }
 
     const insumo = new Insumo({
       name: name.trim(),
       quantity,
-      comments: comments?.trim() || ""
+      comments: comments?.trim() || "",
     });
 
     const saved = await insumo.save();
@@ -54,13 +54,13 @@ exports.updateInsumo = async (req, res, next) => {
 
     if (!name || !quantity) {
       return res.status(400).json({
-        message: "El nombre y la cantidad son requeridos."
+        message: "El nombre y la cantidad son requeridos.",
       });
     }
 
     if (typeof quantity !== "number" || quantity < 0) {
-      return res.status(400).json({ 
-        message: "La cantidad debe ser un número válido." 
+      return res.status(400).json({
+        message: "La cantidad debe ser un número válido.",
       });
     }
 
@@ -69,9 +69,9 @@ exports.updateInsumo = async (req, res, next) => {
       {
         name: name.trim(),
         quantity,
-        comments: comments?.trim() || ""
+        comments: comments?.trim() || "",
       },
-      { new: true }
+      { new: true },
     );
 
     if (!updated) {

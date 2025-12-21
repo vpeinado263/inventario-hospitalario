@@ -32,7 +32,10 @@ const CrudApp = () => {
       await axios.put(`${API_URL}/${data._id}`, data);
       readData();
     } catch (error) {
-      console.error("Error al actualizar insumo:", error?.response?.data || error);
+      console.error(
+        "Error al actualizar insumo:",
+        error?.response?.data || error,
+      );
     }
   };
 
@@ -43,7 +46,10 @@ const CrudApp = () => {
       await axios.delete(`${API_URL}/${id}`);
       readData();
     } catch (error) {
-      console.error("Error al eliminar insumo:", error?.response?.data || error);
+      console.error(
+        "Error al eliminar insumo:",
+        error?.response?.data || error,
+      );
     }
   };
 
@@ -70,4 +76,3 @@ const CrudApp = () => {
 };
 
 export default CrudApp;
-

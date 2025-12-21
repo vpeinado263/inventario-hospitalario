@@ -23,11 +23,9 @@ const startServer = async () => {
         process.exit(0);
       });
     });
-
   } catch (error) {
     console.error("Error al iniciar el servidor:", error.message);
   }
 };
 
 startServer();
-

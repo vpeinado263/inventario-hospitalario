@@ -19,4 +19,3 @@ const CrudTableRow = ({ insumo, deleteData, setDataToEdit }) => {
 };
 
 export default CrudTableRow;
-
