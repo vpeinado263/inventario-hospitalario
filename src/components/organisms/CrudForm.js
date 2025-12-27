@@ -5,7 +5,7 @@ const initialForm = {
   name: "",
   quantity: "",
   comments: "",
-  _id: null, // <-- ajustado para que coincida con MongoDB
+  id: null, 
 };
 
 const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
@@ -41,8 +41,8 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
       return;
     }
 
-    // SI NO TIENE _id → es un registro nuevo
-    if (!form._id) {
+    
+    if (!form.id) {
       createData(form);
     } else {
       updateData(form);
@@ -59,7 +59,7 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
   return (
     <section className={styles.section}>
       <h3 className={styles.title}>
-        {form._id ? "Editar Insumo" : "Agregar Insumo Faltante"}
+        {form.id ? "Editar Insumo" : "Insumo Faltante"}
       </h3>
 
       <form onSubmit={handleSubmit} className={styles.form}>
@@ -93,7 +93,7 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
 
         <input
           type="submit"
-          value={form._id ? "Actualizar" : "Insertar"}
+          value={form.id ? "Actualizar" : "Insertar"}
           disabled={!form.name || !form.quantity}
           className={`${styles.button} ${styles.submit}`}
         />
