@@ -29,7 +29,7 @@ const CrudApp = () => {
 
   const updateData = async (data) => {
     try {
-      await axios.put(`${API_URL}/${data._id}`, data);
+      await axios.put(`${API_URL}/${data.id}`, data);
       readData();
     } catch (error) {
       console.error(
