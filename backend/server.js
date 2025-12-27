@@ -15,14 +15,6 @@ const startServer = async () => {
       console.log(`Servidor funcionando en http://localhost:${port}`);
     });
 
-    // Manejo del cierre del servidor
-    process.on("SIGINT", () => {
-      console.log("Cerrando el servidor...");
-      server.close(() => {
-        console.log("Servidor cerrado correctamente");
-        process.exit(0);
-      });
-    });
   } catch (error) {
     console.error("Error al iniciar el servidor:", error.message);
   }
