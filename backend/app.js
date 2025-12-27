@@ -17,7 +17,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(morgan("dev"));
 app.use(logRequest);
 
-
 // Rutas principales
 app.use("/insumos", insumosRoutes);
 

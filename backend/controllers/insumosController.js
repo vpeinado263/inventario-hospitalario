@@ -71,7 +71,7 @@ exports.createInsumo = async (req, res, next) => {
     next(error);
   }
 };
-  
+
 //  PUT /insumos/:id
 exports.updateInsumo = async (req, res, next) => {
   try {
