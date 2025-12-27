@@ -3,7 +3,6 @@ const sql = require("./database/dbConnection");
 
 const startServer = async () => {
   try {
-    // test rápido de conexión
     await sql`SELECT 1`;
 
     const port = process.env.PORT || 5001;
