@@ -1,5 +1,4 @@
 const express = require("express");
-const session = require("express-session");
 const cors = require("cors");
 const helmet = require("helmet");
 const morgan = require("morgan");
@@ -7,7 +6,6 @@ require("dotenv").config();
 
 const errorHandler = require("./middleware/errorHandler");
 const logRequest = require("./middleware/logRequest");
-const insumosRoutes = require("./routes/insumosRoutes");
 
 const app = express();
 
@@ -19,21 +17,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(morgan("dev"));
 app.use(logRequest);
 
-// Solo activar sesiones si realmente las usás
-if (process.env.USE_SESSION === "true") {
-  app.use(
-    session({
-      secret: process.env.SESSION_SECRET || "defaultsecret",
-      resave: false,
-      saveUninitialized: true,
-      cookie: {
-        httpOnly: true,
-        secure: false, // Cambiar a true si usás HTTPS
-        maxAge: 1000 * 60 * 60, // 1 hora
-      },
-    }),
-  );
-}
 
 // Rutas principales
 app.use("/insumos", insumosRoutes);
