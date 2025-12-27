@@ -10,17 +10,18 @@
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,md}\""
   },
   "dependencies": {
-    "next": "^15.5.9",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
     "axios": "^1.7.9",
     "helmet": "^8.1.0",
-    "morgan": "^1.10.1"
+    "morgan": "^1.10.1",
+    "next": "^15.5.9",
+    "postgres": "^3.4.7",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
+    "concurrently": "^9.1.2",
     "eslint": "^8",
     "eslint-config-next": "^15.5.9",
-    "prettier": "^3.7.4",
-    "concurrently": "^9.1.2"
+    "prettier": "^3.7.4"
   }
 }
