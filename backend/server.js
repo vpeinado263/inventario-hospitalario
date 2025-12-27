@@ -1,22 +1,19 @@
 const app = require("./app");
-const connectDB = require("./database/dbConnection");
-const insumosRoutes = require("./routes/insumosRoutes");
+const sql = require("./database/dbConnection");
 
 const startServer = async () => {
   try {
-    await connectDB();
+    // test rápido de conexión
+    await sql`SELECT 1`;
 
-    // Primero usa las rutas
-    app.use("/api/insumos", insumosRoutes);
-
-    // Luego inicia el servidor
     const port = process.env.PORT || 5001;
-    const server = app.listen(port, () => {
+    app.listen(port, () => {
       console.log(`Servidor funcionando en http://localhost:${port}`);
     });
 
   } catch (error) {
     console.error("Error al iniciar el servidor:", error.message);
+    process.exit(1);
   }
 };
 
