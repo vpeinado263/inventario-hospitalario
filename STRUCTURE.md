@@ -13,16 +13,14 @@
 |   |-- node_modules
 |   |-- routes/
 |   |   |-- insumosRoutes.js
-|   |-- .env
-|   |-- .gitignore
 |   |-- app.js
 |   |-- package.json
 |   |-- package-lock.json
 |   |-- server.js
 |-- node_modules
 |-- public/
+|   |-- Agile-Nurshing.png
 |   |-- nurshing.ico
-|   |-- nurshing.png
 |   |-- react.png
 |-- src/
 |   |-- components/
