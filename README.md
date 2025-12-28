@@ -25,4 +25,25 @@ En esta app, cada una de estas operaciones se asocia con un verbo HTTP diferente
 3. **Uso de `Date.now`**: Este método devuelve la cantidad de milisegundos transcurridos desde el 1 de enero de 1970 hasta el momento actual. Nos permite, por ejemplo, crear identificadores únicos para los registros.
 4. **Cadena templada**: Utilización de cadenas templadas (template strings) para construir cadenas de texto dinámicamente, lo cual facilita la manipulación de datos en los métodos CRUD.
 
+## Arquitectura del Proyecto
+Frontend (React + Next.js)
+- Comunicación con el backend mediante Axios
+- Formulario controlado con useState
+- Renderizado dinámico de la tabla de insumos
+Backend (Node.js + Express)
+- API REST estructurada por:
+- Controllers
+- Routes
+- Middlewares
+- Manejo de errores centralizado
+- Configuración de CORS para permitir conexiones desde producción (Vercel)
+Base de Datos (PostgreSQL, gestionado mediante Supabase)
+Tabla insumos con los campos:
+- id
+- name
+- quantity
+- comments
+- created_at
+Operaciones CRUD realizadas desde el backend
+
 in process : https://8va-tarea-react-next-js.vercel.app/
