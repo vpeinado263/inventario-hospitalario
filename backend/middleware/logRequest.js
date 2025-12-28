@@ -1,8 +1,5 @@
 const logRequest = (req, res, next) => {
-  const currentTime = new Date().toLocaleDateString();
-  console.log(
-    `[${currentTime}] - solicitud recibida: ${req.method} ${req.url}`,
-  );
+  console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
   next();
 };
 
