@@ -14,8 +14,7 @@ const app = express();
 app.use(
   cors({
     origin: [
-      "http://localhost:3000",
-      "https://inventario-hospitalario.onrender.com"
+      "*",
     ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type"]
