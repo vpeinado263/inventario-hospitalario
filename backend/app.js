@@ -13,11 +13,15 @@ const app = express();
 // Middleware global
 app.use(
   cors({
-    origin: ["https://inventario-hospitalario.onrender.com"],
+    origin: [
+      "http://localhost:3000",
+      "https://inventario-hospitalario.onrender.com"
+    ],
     methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type"],
-  }),
+    allowedHeaders: ["Content-Type"]
+  })
 );
+
 
 app.use(helmet());
 app.use(express.json());

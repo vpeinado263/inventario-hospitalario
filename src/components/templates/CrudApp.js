@@ -20,12 +20,12 @@ const CrudApp = () => {
 
   const createData = async (data) => {
     try {
-      await axios.post(API_URL, data);
-      readData();
+      const res = await axios.post(API_URL, data);
+      setDb((prev) => [...prev, res.data]);
     } catch (error) {
-      console.error("Error al crear insumo:", error?.response?.data || error);
+      console.error(error);
     }
-  };
+  };  
 
   const updateData = async (req, res, next) => {
     try {
