@@ -5,7 +5,7 @@ const initialForm = {
   name: "",
   quantity: "",
   comments: "",
-  id: null, 
+  id: null,
 };
 
 const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
@@ -44,7 +44,7 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
       createData(form);
     } else {
       updateData(form);
-    }    
+    }
 
     handleReset();
   };
@@ -53,7 +53,7 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
     setForm(initialForm);
     setDataToEdit(null);
   };
-  
+
   return (
     <section className={styles.section}>
       <h3 className={styles.title}>

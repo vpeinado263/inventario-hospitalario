@@ -31,20 +31,19 @@ const CrudApp = () => {
     try {
       const { id } = req.params;
       const { name, quantity, comments } = req.body;
-  
+
       const { error } = await supabase
         .from("insumos")
         .update({ name, quantity, comments })
         .eq("id", id);
-  
+
       if (error) throw error;
-  
+
       res.json({ message: "Insumo actualizado correctamente" });
     } catch (error) {
       next(error);
     }
   };
-  
 
   const deleteData = async (id) => {
     if (!confirm("¿Estás seguro de eliminar este insumo?")) return;
