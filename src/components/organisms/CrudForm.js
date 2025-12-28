@@ -41,12 +41,11 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
       return;
     }
 
-    
-    if (!form.id) {
+    if (form.id == null) {
       createData(form);
     } else {
       updateData(form);
-    }
+    }    
 
     handleReset();
   };
