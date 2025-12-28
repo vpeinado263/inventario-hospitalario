@@ -10,7 +10,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "Backend API para gestión de inventario hospitalario con Express, MongoDB y Mongoose.",
+  "description": "Backend API para gestión de inventario hospitalario.",
   "dependencies": {
     "@supabase/supabase-js": "^2.89.0",
     "cors": "^2.8.5",
