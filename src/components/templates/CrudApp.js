@@ -35,10 +35,7 @@ const CrudApp = () => {
         prev.map((el) => (el.id === data.id ? res.data : el))
       );
     } catch (error) {
-      console.error(
-        "Error al actualizar insumo:",
-        error?.response?.data || error
-      );
+      console.error("Error al actualizar:", error);
     }
   };
   
