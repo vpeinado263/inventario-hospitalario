@@ -1,17 +1,9 @@
-const postgres = require("postgres");
+const { createClient } = require("@supabase/supabase-js");
 
-const sql = postgres(process.env.DATABASE_URL, {
-  ssl: "require",
-});
+const supabase = createClient(
+  process.env.SUPABASE_URL,
+  process.env.SUPABASE_SERVICE_ROLE_KEY
+);
 
-const connectDB = async () => {
-  try {
-    await sql`select 1`;
-    console.log("✅ Conectado a Supabase PostgreSQL");
-  } catch (error) {
-    console.error("❌ Error conectando a Supabase:", error.message);
-    throw error;
-  }
-};
+module.exports = supabase;
 
-module.exports = connectDB;
