@@ -3,7 +3,7 @@ import axios from "axios";
 import CrudForm from "../organisms/CrudForm";
 import CrudTable from "../organisms/CrudTable";
 
-const API_URL = "https://inventario-hospitalario.onrender.com/insumos/";
+const API_URL = "https://inventario-hospitalario.onrender.com/insumos";
 
 const CrudApp = () => {
   const [db, setDb] = useState([]);

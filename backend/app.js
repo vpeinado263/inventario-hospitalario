@@ -9,15 +9,23 @@ const logRequest = require("./middleware/logRequest");
 const insumosRoutes = require("./routes/insumosRoutes");
 
 const app = express();
+const allowedOrigins = [
+  "http://localhost:3000",
+  "https://inventario-hospitalario.onrender.com",
+];
+
 
 // CORS
 app.use(
   cors({
-    origin: [
-      "*",
-    ],
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type"]
+    origin: (origin, callback) => {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    credentials: true,
   })
 );
 
