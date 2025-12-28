@@ -24,7 +24,7 @@ const CrudTable = ({ data = [], deleteData, setDataToEdit }) => {
           ) : (
             data.map((insumo) => (
               <CrudTableRow
-                key={insumo._id}
+                key={insumo.id}
                 insumo={insumo}
                 deleteData={deleteData}
                 setDataToEdit={setDataToEdit}

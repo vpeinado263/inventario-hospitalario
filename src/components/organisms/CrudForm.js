@@ -29,7 +29,6 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Validaciones
     if (!form.name.trim()) {
       alert("El nombre del insumo es obligatorio.");
       return;
@@ -54,7 +53,7 @@ const CrudForm = ({ createData, updateData, dataToEdit, setDataToEdit }) => {
     setForm(initialForm);
     setDataToEdit(null);
   };
-
+  
   return (
     <section className={styles.section}>
       <h3 className={styles.title}>
