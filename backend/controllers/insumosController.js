@@ -1,4 +1,4 @@
-const sql = require("../database/dbConnection");
+const supabase = require("../database/dbConnection");
 
 // GET /insumos
 exports.getInsumos = async (req, res, next) => {
