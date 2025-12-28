@@ -1,6 +1,6 @@
 const supabase = require("../database/dbConnection");
 
-// GET /insumos
+// GET
 exports.getInsumos = async (req, res, next) => {
   try {
     const { data, error } = await supabase
@@ -16,20 +16,14 @@ exports.getInsumos = async (req, res, next) => {
   }
 };
 
-// POST /insumos
+// POST
 exports.createInsumo = async (req, res, next) => {
   try {
     const { name, quantity, comments } = req.body;
 
     if (!name || quantity === undefined) {
       return res.status(400).json({
-        message: "El nombre y la cantidad son requeridos.",
-      });
-    }
-
-    if (typeof quantity !== "number" || quantity < 0) {
-      return res.status(400).json({
-        message: "La cantidad debe ser un número válido.",
+        message: "Nombre y cantidad son requeridos.",
       });
     }
 
@@ -46,14 +40,13 @@ exports.createInsumo = async (req, res, next) => {
       .single();
 
     if (error) throw error;
-
     res.status(201).json(data);
   } catch (error) {
     next(error);
   }
 };
 
-// PUT /insumos/:id
+// PUT 
 exports.updateInsumo = async (req, res, next) => {
   try {
     const { id } = req.params;
@@ -62,12 +55,6 @@ exports.updateInsumo = async (req, res, next) => {
     if (!name || quantity === undefined) {
       return res.status(400).json({
         message: "El nombre y la cantidad son requeridos.",
-      });
-    }
-
-    if (typeof quantity !== "number" || quantity < 0) {
-      return res.status(400).json({
-        message: "La cantidad debe ser un número válido.",
       });
     }
 
@@ -94,7 +81,7 @@ exports.updateInsumo = async (req, res, next) => {
   }
 };
 
-// DELETE /insumos/:id
+// DELETE 
 exports.deleteInsumo = async (req, res, next) => {
   try {
     const { id } = req.params;
