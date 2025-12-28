@@ -3,7 +3,7 @@ import EditButton from "../atoms/EditButton";
 import styles from "@/styles/CrudTableRow.module.css";
 
 const CrudTableRow = ({ insumo, deleteData, setDataToEdit }) => {
-  const { _id, name, quantity, comments } = insumo;
+  const { id, name, quantity, comments } = insumo;
 
   return (
     <tr>
@@ -12,7 +12,7 @@ const CrudTableRow = ({ insumo, deleteData, setDataToEdit }) => {
       <td className={styles.cell}>{comments}</td>
       <td>
         <EditButton onClick={() => setDataToEdit(insumo)} />
-        <DeleteButton onClick={() => deleteData(_id)} />
+        <DeleteButton onClick={() => deleteData(id)} />
       </td>
     </tr>
   );
