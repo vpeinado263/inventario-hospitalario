@@ -10,7 +10,7 @@ const insumosRoutes = require("./routes/insumosRoutes");
 
 const app = express();
 
-// Middleware global
+// CORS
 app.use(
   cors({
     origin: [
@@ -22,22 +22,20 @@ app.use(
   })
 );
 
-
 app.use(helmet());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan("dev"));
 app.use(logRequest);
 
-// Rutas principales
+// RUTAS
 app.use("/insumos", insumosRoutes);
 
-// Ruta base
 app.get("/", (req, res) => {
   res.json({ message: "Bienvenido a la API de Insumo!" });
 });
 
-// 404 - Not Found en formato JSON
+// 404 
 app.use((req, res) => {
   res.status(404).json({ error: "Recurso no encontrado" });
 });
