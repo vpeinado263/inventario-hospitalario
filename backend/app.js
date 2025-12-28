@@ -6,6 +6,7 @@ require("dotenv").config();
 
 const errorHandler = require("./middleware/errorHandler");
 const logRequest = require("./middleware/logRequest");
+const insumosRoutes = require("./routes/insumosRoutes");
 
 const app = express();
 
