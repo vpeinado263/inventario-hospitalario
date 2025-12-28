@@ -27,17 +27,24 @@ const CrudApp = () => {
     }
   };
 
-  const updateData = async (data) => {
+  const updateData = async (req, res, next) => {
     try {
-      await axios.put(`${API_URL}/${data.id}`, data);
-      readData();
+      const { id } = req.params;
+      const { name, quantity, comments } = req.body;
+  
+      const { error } = await supabase
+        .from("insumos")
+        .update({ name, quantity, comments })
+        .eq("id", id);
+  
+      if (error) throw error;
+  
+      res.json({ message: "Insumo actualizado correctamente" });
     } catch (error) {
-      console.error(
-        "Error al actualizar insumo:",
-        error?.response?.data || error,
-      );
+      next(error);
     }
   };
+  
 
   const deleteData = async (id) => {
     if (!confirm("¿Estás seguro de eliminar este insumo?")) return;
