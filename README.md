@@ -46,4 +46,9 @@ Tabla insumos con los campos:
 - created_at
 Operaciones CRUD realizadas desde el backend
 
+## Deploy
+- Frontend: Vercel
+- Backend: Render
+- Base de datos: Supabase (PostgreSQL)
+
 in process : https://8va-tarea-react-next-js.vercel.app/
