@@ -14,14 +14,14 @@ const CrudApp = () => {
       const { data } = await axios.get(API_URL);
       setDb(data);
     } catch (error) {
-      console.error("Error al leer los datos:", error?.response?.data || error);
+      console.error(error);
     }
   };
 
   const createData = async (data) => {
     try {
       const res = await axios.post(API_URL, data);
-      setDb((prev) => [...prev, res.data]);
+      setDb(prev => [...prev, res.data]);
     } catch (error) {
       console.error(error);
     }
@@ -31,26 +31,20 @@ const CrudApp = () => {
     try {
       const res = await axios.put(`${API_URL}/${data.id}`, data);
   
-      setDb((prev) =>
-        prev.map((el) => (el.id === data.id ? res.data : el))
-      );
+      setDb(prev => prev.map(item => (item.id === data.id ? res.data : item)));
     } catch (error) {
-      console.error("Error al actualizar:", error);
+      console.error(error);
     }
   };
   
-
   const deleteData = async (id) => {
     if (!confirm("¿Estás seguro de eliminar este insumo?")) return;
 
     try {
       await axios.delete(`${API_URL}/${id}`);
-      readData();
+      setDb(prev => prev.filter(item => item.id !== id));
     } catch (error) {
-      console.error(
-        "Error al eliminar insumo:",
-        error?.response?.data || error,
-      );
+      console.error(error);
     }
   };
 
