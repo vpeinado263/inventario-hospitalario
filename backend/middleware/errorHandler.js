@@ -1,17 +1,8 @@
 const errorHandler = (err, req, res, next) => {
-  console.error(`Error: ${err.message || "Error desconocido"}`);
-  console.log(`Stack trace: ${err.stack}`);
-
-  if (res.headersSent) {
-    return next(err);
-  }
-
-  const statusCode = err.statusCode || 500;
-  const errorMessage = err.message || "Algo salió mal en el servidor";
-
-  res.status(statusCode).json({
+  console.error(err.stack);
+  res.status(err.statusCode || 500).json({
     success: false,
-    error: errorMessage,
+    error: err.message || "Error en el servidor",
   });
 };
 
