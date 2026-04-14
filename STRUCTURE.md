@@ -8,8 +8,6 @@
 |   |-- middleware/
 |   |   |-- errorHandler.js
 |   |   |-- logRequest.js
-|   |-- models/
-|   |   |-- insumo.js
 |   |-- node_modules
 |   |-- routes/
 |   |   |-- insumosRoutes.js
