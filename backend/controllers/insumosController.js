@@ -1,99 +1,59 @@
-const supabase = require("../database/dbConnection");
+const { pool } = require('../database/db');
 
-// GET
-exports.getInsumos = async (req, res, next) => {
+const getInsumos = async (req, res) => {
   try {
-    const { data, error } = await supabase
-      .from("insumos")
-      .select("*")
-      .order("created_at", { ascending: false });
-
-    if (error) throw error;
-
-    res.status(200).json(data);
+    // Consulta directa sin función almacenada (más confiable)
+    const { rows } = await pool.query("SELECT * FROM insumos ORDER BY id DESC");
+    res.json(rows);
   } catch (error) {
-    next(error);
+    console.error('Error en getInsumos:', error);
+    res.status(500).json({ error: 'Error al obtener los insumos' });
   }
 };
 
-// POST
-exports.createInsumo = async (req, res, next) => {
+const createInsumo = async (req, res) => {
   try {
     const { name, quantity, comments } = req.body;
-
-    if (!name || quantity === undefined) {
-      return res.status(400).json({
-        message: "Nombre y cantidad son requeridos.",
-      });
-    }
-
-    const { data, error } = await supabase
-      .from("insumos")
-      .insert([
-        {
-          name: name.trim(),
-          quantity,
-          comments: comments?.trim() || "",
-        },
-      ])
-      .select()
-      .single();
-
-    if (error) throw error;
-    res.status(201).json(data);
+    const { rows } = await pool.query(
+      "INSERT INTO insumos (name, quantity, comments) VALUES ($1, $2, $3) RETURNING *",
+      [name, quantity, comments]
+    );
+    res.status(201).json(rows[0]);
   } catch (error) {
-    next(error);
+    console.error('Error en createInsumo:', error);
+    res.status(500).json({ error: 'Error al crear el insumo' });
   }
 };
 
-// PUT 
-exports.updateInsumo = async (req, res, next) => {
+const updateInsumo = async (req, res) => {
   try {
     const { id } = req.params;
     const { name, quantity, comments } = req.body;
-
-    if (!name || quantity === undefined) {
-      return res.status(400).json({
-        message: "El nombre y la cantidad son requeridos.",
-      });
-    }
-
-    const { data, error } = await supabase
-      .from("insumos")
-      .update({
-        name: name.trim(),
-        quantity,
-        comments: comments?.trim() || "",
-      })
-      .eq("id", id)
-      .select()
-      .single();
-
-    if (error) throw error;
-
-    if (!data) {
-      return res.status(404).json({ message: "Insumo no encontrado." });
-    }
-
-    res.status(200).json(data);
+    const { rows } = await pool.query(
+      "UPDATE insumos SET name = $1, quantity = $2, comments = $3, updated_at = CURRENT_TIMESTAMP WHERE id = $4 RETURNING *",
+      [name, quantity, comments, id]
+    );
+    res.json(rows[0]);
   } catch (error) {
-    next(error);
+    console.error('Error en updateInsumo:', error);
+    res.status(500).json({ error: 'Error al actualizar el insumo' });
   }
 };
 
-// DELETE 
-exports.deleteInsumo = async (req, res, next) => {
+const deleteInsumo = async (req, res) => {
   try {
     const { id } = req.params;
-
-    const { error } = await supabase.from("insumos").delete().eq("id", id);
-
-    if (error) throw error;
-
-    res.status(200).json({
-      message: "Insumo eliminado correctamente.",
-    });
+    await pool.query("DELETE FROM insumos WHERE id = $1", [id]);
+    res.json({ message: "Insumo eliminado correctamente." });
   } catch (error) {
-    next(error);
+    console.error('Error en deleteInsumo:', error);
+    res.status(500).json({ error: 'Error al eliminar el insumo' });
   }
+};
+
+module.exports = {
+  getInsumos,
+  createInsumo,
+  updateInsumo,
+  deleteInsumo
 };
