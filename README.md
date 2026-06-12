@@ -54,30 +54,6 @@ Vercel Render Render
   - `created_at` (TIMESTAMP, fecha de creación)
   - `updated_at` (TIMESTAMP, última modificación)
 
-## 🧪 Lo que Aprendí en este Proyecto
-
-### 1. Bases de datos en la nube
-- Entendí que **no es necesario tener PostgreSQL instalado localmente**; existen servicios en la nube como Render, Supabase o Neon que ofrecen bases de datos gratuitas.
-- Aprendí a usar **Render Postgres**, que aunque expira a los 30 días, es ideal para proyectos de portafolio.
-
-### 2. Configuración de variables de entorno
-- Descubrí la importancia de usar **`DATABASE_URL`** en lugar de variables separadas (`DB_HOST`, `DB_USER`, etc.) para simplificar la conexión.
-- Aprendí a diferenciar entre **URL interna** (para servicios dentro de Render) y **URL externa** (para pruebas locales).
-
-### 3. Diferencia entre desarrollo local y producción
-- En **local**, se usa `localhost:5432` o la URL externa de la base de datos en la nube.
-- En **Render**, se usa la URL interna para que los servicios se comuniquen por red privada.
-
-### 4. Por qué NO usé Supabase (aunque lo consideré)
-- Supabase es excelente para proyectos pequeños o aplicaciones que necesitan autenticación integrada, pero para este proyecto:
-  - Ya tenía el backend construido con Express.
-  - Preferí mantener toda la lógica en mi propio servidor en lugar de depender de la API REST de Supabase.
-  - Render Postgres es suficiente y mantiene todo el proyecto en un solo ecosistema.
-
-### 5. Manejo de errores y logs
-- Aprendí a leer los logs de Render para diagnosticar problemas de conexión.
-- Identifiqué errores como `ECONNREFUSED` (falta de variable de entorno) y `ENOTFOUND` (URL incorrecta).
-
 ## 🌐 Deploy
 
 | Servicio | Enlace | Estado |
