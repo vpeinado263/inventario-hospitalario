@@ -1,13 +1,22 @@
-// backend/database/db.js
 const { Pool } = require('pg');
+require('dotenv').config();
 
 const pool = new Pool({
-  user: process.env.DB_USER || 'postgres',
-  password: process.env.DB_PASSWORD || 'postgres',
-  host: process.env.DB_HOST || 'localhost',
-  port: process.env.DB_PORT || 5432,
-  database: process.env.DB_NAME || 'inventario_hospitalario',
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    require: true,
+    rejectUnauthorized: false  
+  },
+  connectionTimeoutMillis: 10000,
 });
+
+// const pool = new Pool({
+//   user: process.env.DB_USER || 'postgres',
+//   password: process.env.DB_PASSWORD || 'postgres',
+//   host: process.env.DB_HOST || 'localhost',
+//   port: process.env.DB_PORT || 5432,
+//   database: process.env.DB_NAME || 'inventario_hospitalario',
+// });
 
 const initDatabase = async () => {
   try {
