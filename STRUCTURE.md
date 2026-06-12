@@ -4,7 +4,7 @@
 |   |-- controllers/
 |   |   |-- insumosController.js
 |   |-- database/
-|   |   |-- dbConnection.js
+|   |   |-- db.js
 |   |-- middleware/
 |   |   |-- errorHandler.js
 |   |   |-- logRequest.js
