@@ -1,12 +1,18 @@
-# 🏥 Inventario Hospitalario - CRUD Full Stack
+# Inventario Hospitalario - CRUD Full Stack
 
-> Una aplicación completa de gestión de insumos hospitalarios con operaciones CRUD, desplegada en la nube usando React, Next.js, Node.js, Express y PostgreSQL.
+> Una herramienta práctica para que el jefe de enfermería registre rápidamente las necesidades del servicio en los tres turnos, sin papel ni complicaciones.
 
-## 📋 Descripción del Proyecto
+## Descripción del Proyecto
 
-Este proyecto es una aplicación web tipo CRUD (Crear, Leer, Actualizar, Eliminar) para gestionar el inventario de insumos de un hospital. Permite registrar productos médicos, controlar cantidades y agregar observaciones. Fue desarrollado con fines educativos para comprender la integración de un frontend con un backend y una base de datos en la nube.
+Todos los días, el jefe de enfermería recorre el servicio, escucha las necesidades de cada turno (mañana, tarde, noche) y las anota **en una hoja de papel suelta**. Esa hoja se pierde, se moja, se arruga, o simplemente queda en el bolsillo del uniforme. Es esa misma hojita, pero digital, accesible desde el celular, y ordenada automáticamente en una lista clara.
 
-## 🚀 Tecnologías Utilizadas
+## ¿Para quién es?
+
+- **Jefe de enfermería** que necesita registrar insumos faltantes
+- **Supervisor de turno** que anota lo que hace falta antes de que termine su guardia
+- **Cualquier enfermero/a** que quiera dejar un registro rápido de lo que necesita su servicio
+
+## Tecnologías Utilizadas
 
 | Capa | Tecnologías |
 |------|--------------|
@@ -16,9 +22,9 @@ Este proyecto es una aplicación web tipo CRUD (Crear, Leer, Actualizar, Elimina
 | **Despliegue** | Vercel (Frontend), Render (Backend + Base de datos) |
 | **Control de versiones** | Git + GitHub |
 
-## 🧠 ¿Qué es CRUD?
+## ¿Qué es CRUD?
 
-CRUD es un acrónimo que representa las cuatro operaciones fundamentales que una aplicación realiza sobre los datos:
+CRUD representa las cuatro operaciones fundamentales que una aplicación realiza sobre los datos:
 
 | Operación | Verbo HTTP | Descripción |
 |-----------|------------|-------------|
@@ -27,7 +33,7 @@ CRUD es un acrónimo que representa las cuatro operaciones fundamentales que una
 | **Update** | PUT | Modificar los datos de un insumo |
 | **Delete** | DELETE | Eliminar un insumo del inventario |
 
-## 🏗️ Arquitectura del Proyecto
+##  Arquitectura del Proyecto
 
 Frontend (Next.js) ────► Backend (Express) ────► Base de datos (PostgreSQL)
 Vercel Render Render
