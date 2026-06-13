@@ -9,7 +9,7 @@ const API_URL = "https://inventario-hospitalario.onrender.com/insumos";
 const CrudApp = () => {
   const [db, setDb] = useState([]);
   const [dataToEdit, setDataToEdit] = useState(null);
-
+  const [loading, setLoading] = useState(true); 
   const readData = async () => {
     setLoading(true);
     try {
@@ -17,14 +17,13 @@ const CrudApp = () => {
       setDb(data);
     } catch (error) {
       console.error(error);
-      toast.error("No se pudo cargar la lista");
+      toast.error("No se pudo cargar la lista de insumos");
     } finally {
       setLoading(false);
     }
   };
 
   const createData = async (data) => {
-    // Validaciones
     if (!data.name || data.name.trim().length === 0) {
       toast.warning("Debe escribir el nombre del insumo");
       return false;
@@ -89,7 +88,6 @@ const CrudApp = () => {
   const deleteData = async (id) => {
     const insumoAEliminar = db.find(item => item.id === id);
     
-    // Confirmación nativa de JavaScript
     const confirmar = window.confirm(`¿Eliminar "${insumoAEliminar?.name}"?`);
     
     if (!confirmar) return;
@@ -124,6 +122,7 @@ const CrudApp = () => {
 
       <CrudTable
         data={db}
+        loading={loading}
         deleteData={deleteData}
         setDataToEdit={setDataToEdit}
       />

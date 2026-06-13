@@ -3,7 +3,7 @@ import styles from "@/styles/CrudTable.module.css";
 import { jsPDF } from "jspdf";
 import autoTable from "jspdf-autotable";
 
-const CrudTable = ({ data = [], deleteData, setDataToEdit }) => {
+const CrudTable = ({ data = [], loading = false, deleteData, setDataToEdit }) => {
   
   const exportarPDF = () => {
     const doc = new jsPDF();
@@ -50,10 +50,16 @@ const CrudTable = ({ data = [], deleteData, setDataToEdit }) => {
         </thead>
 
         <tbody>
-          {data.length === 0 ? (
+          {loading ? (
             <tr className={styles["empty-row"]}>
               <td className={styles.td} colSpan={4}>
-                Sin Insumos
+                ⏳ Cargando insumos...
+              </td>
+            </tr>
+          ) : data.length === 0 ? (
+            <tr className={styles["empty-row"]}>
+              <td className={styles.td} colSpan={4}>
+                📋 Sin insumos registrados
               </td>
             </tr>
           ) : (
@@ -68,11 +74,12 @@ const CrudTable = ({ data = [], deleteData, setDataToEdit }) => {
           )}
         </tbody>
       </table>
-        <div className={styles["export-button-container"]}>
+      
+      <div className={styles["export-button-container"]}>
         <button 
           onClick={exportarPDF} 
           className={styles["btn-pdf"]}
-          disabled={data.length === 0}
+          disabled={data.length === 0 || loading}
           title={data.length === 0 ? "No hay insumos para exportar" : "Descargar PDF para enviar a compras"}
         >
           📄 Descargar PDF
