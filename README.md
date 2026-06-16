@@ -38,7 +38,6 @@ CRUD representa las cuatro operaciones fundamentales que una aplicación realiza
 Frontend (Next.js) ────► Backend (Express) ────► Base de datos (PostgreSQL)
 Vercel Render Render
 
-
 ### Frontend (React + Next.js)
 - Formulario controlado con `useState`
 - Comunicación con el backend mediante Axios
@@ -74,5 +73,5 @@ Vercel Render Render
 
 ```env
 # Para desarrollo local (usar URL externa)
-DATABASE_URL=postgresql://usuario:contraseña@host.virginia-postgres.render.com/inventario_hospitalario
-PORT=5001
+DATABASE_URL=
+PORT=
