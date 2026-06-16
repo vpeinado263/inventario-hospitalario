@@ -1,7 +1,7 @@
 # Inventario Hospitalario - CRUD Full Stack
 
-> Una herramienta práctica para que el jefe de enfermería registre rápidamente las necesidades del servicio en los tres turnos, sin papel ni complicaciones.
-
+> Una herramienta práctica para que el jefe de enfermería registre rápidamente las necesidades del servicio en los tres turnos, sin papel ni complicaciones. Desarrollé un sistema web para la gestión básica de insumos hospitalarios. Permite registrar, consultar, actualizar y eliminar insumos.
+> 
 ## Descripción del Proyecto
 
 Todos los días, el jefe de enfermería recorre el servicio, escucha las necesidades de cada turno (mañana, tarde, noche) y las anota **en una hoja de papel suelta**. Esa hoja se pierde, se moja, se arruga, o simplemente queda en el bolsillo del uniforme. Es esa misma hojita, pero digital, accesible desde el celular, y ordenada automáticamente en una lista clara.
